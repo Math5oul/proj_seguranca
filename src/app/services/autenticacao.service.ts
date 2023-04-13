@@ -13,9 +13,9 @@ export class AutenticacaoService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, senha: string): Observable<any> {
+  login(email: string, senha: string, cpf: string): Observable<any> {
     const url = 'http://localhost:3000/login';
-    const body = { email, senha };
+    const body = { email, senha, cpf };
     return this.http.post(url, body);
   }
 

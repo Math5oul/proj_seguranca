@@ -17,11 +17,12 @@ export class LoginComponent implements OnInit {
   usuario: UsuarioImpl = {
     email: '',
     senha: '',
-    nome: ''
+    nome: '',
+    cpf: ''
   };
 
-  fazerLogin(usuario: string, senha: string) {
-    this.autenticacaoService.login(usuario, senha).subscribe(
+  fazerLogin(usuario: string, senha: string,  cpf: string) {
+    this.autenticacaoService.login(usuario, senha, cpf).subscribe(
       resposta => {
         // armazenar token e usuário no localStorage
         localStorage.setItem('token', resposta.token);
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
       },
       erro => {
         console.log('Erro ao fazer login: ', erro);
+        alert('Login inválido')
       }
     );
   }

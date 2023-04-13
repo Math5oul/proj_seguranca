@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const usuarios = [
-  { id: 1, nome: 'João', email: 'joao@mail.com', senha: '123456' },
-  { id: 2, nome: 'Maria', email: 'maria@mail.com', senha: '123456' }
+  { id: 1, nome: 'João', email: 'joao@mail.com', senha: '123456', cpf: '11111111111' },
+  { id: 2, nome: 'Maria', email: 'maria@mail.com', senha: '123456', cpf: '11111111112' }
 ];
 
 let proximoId = 4;
@@ -22,7 +22,8 @@ app.post('/usuarios', (req, res) => {
     id: proximoId++,
     nome: req.body.nome,
     email: req.body.email,
-    senha: req.body.senha
+    senha: req.body.senha,
+    cpf: req.body.cpf
   };
   usuarios.push(novoUsuario);
   res.status(201).json(novoUsuario);
@@ -31,8 +32,9 @@ app.post('/usuarios', (req, res) => {
 app.post('/login', (req, res) => {
   const email = req.body.email;
   const senha = req.body.senha;
+  const cpf = req.body.cpf;
 
-  const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+  const usuario = usuarios.find(u => u.email === email && u.senha === senha && u.cpf === cpf);
 
   if (usuario) {
     res.status(200).json(usuario);
