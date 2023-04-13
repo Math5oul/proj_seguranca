@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const usuarios = [
-  { id: 1, nome: 'João', email: 'joao@mail.com', senha: '123456', cpf: '11111111111' },
-  { id: 2, nome: 'Maria', email: 'maria@mail.com', senha: '123456', cpf: '11111111112' }
+  { id: 1, nome: 'João', email: 'joao@mail.com', senha: '123', cpf: '11111111111' },
+  { id: 2, nome: 'Maria', email: 'maria@mail.com', senha: '123', cpf: '11111111112' }
 ];
 
 let proximoId = 4;

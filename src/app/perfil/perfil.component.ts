@@ -13,9 +13,9 @@ export class PerfilComponent implements OnInit {
   constructor(private autenticacaoService: AutenticacaoService) {}
 
   ngOnInit(): void {
-    const usuarioLogado = this.autenticacaoService.getUsuarioLogado();
-    if (usuarioLogado) {
-      this.usuarioLogado = usuarioLogado as UsuarioImpl;
-    }
+    // const usuarioLogado = this.autenticacaoService.getUsuarioLogado();
+    // if (usuarioLogado) {
+    //   this.usuarioLogado = usuarioLogado as UsuarioImpl;
+    // }
   }
 }
